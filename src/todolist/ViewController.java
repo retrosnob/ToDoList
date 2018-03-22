@@ -76,6 +76,11 @@ public class ViewController extends javax.swing.JFrame {
         });
 
         btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         btnQuit.setText("Quit");
 
@@ -172,6 +177,21 @@ public class ViewController extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btnEditActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // Someone clicked the delete button...
+        
+        // Find the index of the selected task
+        // Pass it to the model's remove method
+        // Update the list
+        
+        int selectedIndex = lstTasks.getSelectedIndex();
+        if (selectedIndex != -1) {
+            model.remove(selectedIndex);
+            lstTasks.setListData(model.getTasks());
+        }
+ 
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

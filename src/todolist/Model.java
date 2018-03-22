@@ -36,6 +36,9 @@ public class Model {
             tasks[i] = tasks[i + 1];
         }
         
+        // Good spot Seamus
+        taskCount = taskCount - 1;
+        
     }
     
     void edit(int index, String title, String description) {
