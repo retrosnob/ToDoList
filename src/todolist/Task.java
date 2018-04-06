@@ -21,7 +21,7 @@ public class Task {
     }
     
     public String toString() {
-        return title;
+        return title + "#" + description;
     }
 
     /**

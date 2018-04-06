@@ -19,6 +19,7 @@ public class ViewController extends javax.swing.JFrame {
     public ViewController(Model model) {
         initComponents();
         this.model = model;
+        lstTasks.setListData(model.getTasks());
     }
 
     /**

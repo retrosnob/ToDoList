@@ -17,6 +17,21 @@ public class Model {
     
     Model() {
         // Constructor
+        // Need to parse strings from helper
+        String lines[] = helper.readTasks();
+        taskCount = lines.length;
+        // loop through each line and create a new task out of it
+        for (int i = 0; i < taskCount; i++) {
+            // Create the ith new task
+            tasks[i] = new Task();
+            // Split the line where the # is
+            String taskLine[] = lines[i].split("#");
+            // Use the first part to set the new task title
+            tasks[i].setTitle(taskLine[0]);
+            // Use the second part to set the new task description
+            tasks[i].setDescription(taskLine[1]);
+        }
+
     }
     
     void add(String title, String description){
@@ -27,6 +42,12 @@ public class Model {
         // add my task to the tasks array
         tasks[taskCount] = task;
         taskCount = taskCount + 1;
+        
+        // Need to save it tasks to file
+        helper.writeTasks(getTasks());
+        
+        
+        
     }
     
     void remove(int index){
